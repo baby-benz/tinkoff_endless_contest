@@ -5,7 +5,7 @@
     class Solution {
     public:
         static unsigned long long
-        findMinFlights(const unsigned int *nums, const unsigned int numsCount, const unsigned int operationsAllowed) {
+        findMaxSumIncrease(const unsigned int *nums, const unsigned int numsCount, const unsigned int operationsAllowed) {
             std::multiset<unsigned int, std::greater<>> sumAdditions;
 
             for (unsigned int i = 0; i < numsCount; i++) {
@@ -41,7 +41,7 @@
             std::cin >> nums[i];
         }
 
-        std::cout << Solution::findMinFlights(nums, numsCount, operationsAllowed) << std::endl;
+        std::cout << Solution::findMaxSumIncrease(nums, numsCount, operationsAllowed) << std::endl;
 
         delete[] nums;
 
