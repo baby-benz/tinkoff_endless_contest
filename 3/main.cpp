@@ -2,7 +2,9 @@
 
 class Solution {
 public:
-    static unsigned int findMinFlights(const unsigned int n, const unsigned int *empFloors, const unsigned int minsToLeave, const unsigned int leavingEmpNum) {
+    static unsigned int
+    findMinFlights(const unsigned int n, const unsigned int *empFloors, const unsigned int minsToLeave,
+                   const unsigned int leavingEmpNum) {
         const unsigned int leavingEmpFloor = empFloors[leavingEmpNum - 1];
         const unsigned int floorsTotal = empFloors[n - 1] - empFloors[0];
         const unsigned int floorsDown = leavingEmpFloor - empFloors[0];
@@ -33,7 +35,7 @@ int main() {
 
     std::cout << Solution::findMinFlights(n, empFloors, minsToLeave, leavingEmpNum) << std::endl;
 
-    free(empFloors);
+    delete[] empFloors;
 
     return 0;
 }
